@@ -93,12 +93,16 @@ for i in range(len(images)):
             box_coordinates = find_cars(car_imgs[j])
             print("Car box found at:")
             print(box_coordinates)
-            lane_num , laneSwitching = find_car_lane(box_coordinates,points)
+            lane_num , laneSwitching, close_flag = find_car_lane(box_coordinates,points)
             print(f"Car in lane: {lane_num} , Lanes Numbered from left to right")
             if laneSwitching:
                  print("Car is changing lanes")
             else:
                  print("Car not changing lanes")
+            if close_flag:
+                 print("Car is close!")
+            else:
+                 print("Car not close")
 
 
 

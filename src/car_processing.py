@@ -50,6 +50,11 @@ def find_car_lane(box_coordinates,points):
         laneSwitching = 1
     else:
         laneSwitching = 0
+    
+    if abs(points[lane_num-1][0][1] - box_coordinates[3]) >= abs(points[lane_num-1][1][1] - box_coordinates[3]):
+        close_flag = 1
+    else:
+        close_flag = 0
 
 
-    return lane_num , laneSwitching
+    return lane_num , laneSwitching, close_flag
